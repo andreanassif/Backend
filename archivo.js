@@ -9,6 +9,5 @@ class Usuario {
 
 
 
-function getFullName() {
-
-}
+const user1 = new Usuario("user1", "nassif1", "libro1", "perro");
+console.log(user1);
