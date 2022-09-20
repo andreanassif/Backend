@@ -13,7 +13,7 @@ class Usuario {
     }
 
     getFullName () {
-        return `${this.nombre} + ${this.apellido}`;
+        return `${this.nombre} ${this.apellido}`;
         
     }
 
@@ -23,27 +23,28 @@ class Usuario {
         this.mascotas.push(newMascota);
     }
 
-    countMascotas(){
-        this.mascotas.length();
+    countMascotas () {
+        console.log(this.mascotas.length());
+            
     }
 
-    getBookNames(){ 
-        this.libros.map();
+    getBookNames (){ 
+        return this.libros.map(libro => libro.nombre);
     }
 
     
 }
 
 
-
-
 const user1 = new Usuario("user1", "nassif1", [{nombre:"libro1", autor:"author1"}], ["perro", "gato"]);
+
 console.log(user1);
 user1.addBook("libro2", "author2");
-user1.getFullName();
+console.log(user1.getFullName());
 user1.addMascota("perico");
-user1.getBookNames();
 user1.countMascotas();
+console.log(user1.getBookNames());
+
 
 
 
