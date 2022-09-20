@@ -23,10 +23,11 @@ class Usuario {
         this.mascotas.push(newMascota);
     }
 
-    countMascotas () {
-        console.log(this.mascotas.length());
-            
-    }
+    countMascotas(){
+
+        return this.mascotas.length
+        
+        }
 
     getBookNames (){ 
         return this.libros.map(libro => libro.nombre);
@@ -42,8 +43,8 @@ console.log(user1);
 user1.addBook("libro2", "author2");
 console.log(user1.getFullName());
 user1.addMascota("perico");
-user1.countMascotas();
 console.log(user1.getBookNames());
+console.log(user1.countMascotas());
 
 
 
