@@ -85,7 +85,7 @@ class Contenedor {
     }
 }
 
-const listProducts = new Contenedor("./products.txt")
+const listProducts = new Contenedor("./Desafio2/products.txt")
 
 const product1 = {
     name: "Velador Espiraldo Mod7", 
