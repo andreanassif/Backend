@@ -17,13 +17,13 @@ class Contenedor {
                         ...product
                     }
                     products.push(newProduct);
-                    await fs.promises.writeFile(this.productFile, JSON.stringify([products], null, 2))
+                    await fs.promises.writeFile(this.productFile, JSON.stringify(products, null, 2))
                 } else {
                     const newProduct={
                         id:1,
                         ...product
                     }
-                    await fs.promises.writeFile(this.productFile, JSON.stringify([newProduct], null, 2))
+                    await fs.promises.writeFile(this.productFile, JSON.stringify(newProduct, null, 2))
 
                 }
             } else {
@@ -85,7 +85,7 @@ class Contenedor {
     }
 }
 
-const listProducts = new Contenedor("./Desafio2/products.txt")
+const listProducts = new Contenedor("./products.txt")
 
 const product1 = {
     name: "Velador Espiraldo Mod7", 
@@ -109,8 +109,8 @@ const createProduct = async()=>{
     await listProducts.save(product1);
     await listProducts.save(product2);
     await listProducts.save(product3);
-    //const resultId = await listProducts.getById(1);
-    //console.log(resultId)
+    const resultId = await listProducts.getById(1);
+    console.log(resultId)
    const products = await listProducts.getAll();
    console.log(products)
     //await listProducts.deleteById(2);
