@@ -106,18 +106,18 @@ const product3 = {
 }
 
 const createProduct = async()=>{
-    //await listProducts.save(product1);
-    //await listProducts.save(product2);
-    //await listProducts.save(product3);
+    await listProducts.save(product1);
+    await listProducts.save(product2);
+    await listProducts.save(product3);
     const resultId = await listProducts.getById(1);
     console.log(resultId)
-   const products = await listProducts.getAll();
-   console.log(products)
-    //await listProducts.deleteById(2);
-    //await listProducts.save(product2);
-    //await listProducts.deleteAll(); 
+    const products = await listProducts.getAll();
+    console.log(products)
+    await listProducts.deleteById(2);
+    await listProducts.save(product2);
+    await listProducts.deleteAll(); 
 }
 
-createProduct();
+//createProduct();
 
 module.exports = Contenedor;
