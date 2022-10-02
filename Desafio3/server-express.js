@@ -13,8 +13,8 @@ app.get("/products", async (req, res)=>{
 })
 
 app.get("/productRandom", async (req, res)=>{
-    const allProducts = listProducts.getAll()
-    let numRandom = Math.round(Math.random(1,allProducts.length)*10+1)
+    const allProducts = await listProducts.getAll()
+    let numRandom = Math.round(Math.random(1,allProducts.length)*(40+1))
     console.log(numRandom)
     const idRandom = await listProducts.getById(numRandom)
     res.send(idRandom)
