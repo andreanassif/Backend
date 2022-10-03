@@ -5,7 +5,7 @@ class Contenedor {
         this.productFile = productFile;
     }
 
-    save = async(product)=>{
+    async save (product) {
         try {
             if(fs.existsSync(this.productFile)){
                 const contenido = await fs.promises.readFile(this.productFile,"utf-8");
@@ -38,7 +38,7 @@ class Contenedor {
         }
     }
 
-    getById = async(id)=>{
+    async getById (id) {
         try {
             if(fs.existsSync(this.productFile)){
                 const contenido = await fs.promises.readFile(this.productFile,"utf-8");
@@ -55,7 +55,7 @@ class Contenedor {
         }
     }
 
-    getAll = async()=>{
+    async getAll () {
         try {
             const contenido = await fs.promises.readFile(this.productFile,"utf8");
             const products = JSON.parse(contenido);
@@ -65,7 +65,7 @@ class Contenedor {
         }
     }
 
-    deleteById = async(id)=>{
+    async deleteById (id) {
         try {
             const contenido = await fs.promises.readFile(this.productFile,"utf8");
             const products = JSON.parse(contenido);
@@ -76,7 +76,7 @@ class Contenedor {
         }
     }
 
-    deleteAll = async()=>{
+    async deleteAll () {
         try {
             await fs.promises.writeFile(this.productFile, JSON.stringify([]));
         } catch (error) {
