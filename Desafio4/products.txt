@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "name": "Velador Espiraldo Mod7",
+    "price": 1900,
+    "img": "https://res.cloudinary.com/dhndpus6m/image/upload/v1659131863/Locosen3D/velador-blanco-modelo7_vo5kef.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Velador Espiraldo Mod33",
+    "price": 1900,
+    "img": "https://res.cloudinary.com/dhndpus6m/image/upload/v1659131863/Locosen3D/velador-naranja-modelo33_vtknpl.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Velador Espiraldo Mod3",
+    "price": 1900,
+    "img": "https://res.cloudinary.com/dhndpus6m/image/upload/v1659131863/Locosen3D/velador-on-fucsia-modelo3_gb9xaq.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Velador Espiraldo Mod7",
+    "price": 1900,
+    "img": "https://res.cloudinary.com/dhndpus6m/image/upload/v1659131863/Locosen3D/velador-blanco-modelo7_vo5kef.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Velador Espiraldo Mod3",
+    "price": 1900,
+    "img": "https://res.cloudinary.com/dhndpus6m/image/upload/v1659131863/Locosen3D/velador-on-fucsia-modelo3_gb9xaq.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Velador Espiraldo Mod33",
+    "price": 1900,
+    "img": "https://res.cloudinary.com/dhndpus6m/image/upload/v1659131863/Locosen3D/velador-naranja-modelo33_vtknpl.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Velador Espiraldo Mod3",
+    "price": 1900,
+    "img": "https://res.cloudinary.com/dhndpus6m/image/upload/v1659131863/Locosen3D/velador-on-fucsia-modelo3_gb9xaq.jpg"
+  }
+  
+]
