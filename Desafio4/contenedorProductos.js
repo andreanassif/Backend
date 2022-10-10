@@ -84,7 +84,7 @@ class Contenedor {
         }
     }
 
-    async updateById (id,body) {
+    async putById (id,body) {
         try{
             const productos = await this.getAll();
             const productPos = productos.findIndex(elm=>elm.id === id);
@@ -92,7 +92,7 @@ class Contenedor {
                 id:id,
                 ...body
             };
-            await fs.promises.writeFile(this.nameFile, JSON.stringify(productos, null, 2))
+            await fs.promises.writeFile(this.productFile, JSON.stringify(productos, null, 2))//estanba this.nameFil => productFile
             return productos;
         } catch (error) {
             console.log(error)

@@ -1,9 +1,12 @@
 const express = require("express");
-const Contenedor = require("../Desafio4/contenedorProductos");
+const Contenedor = require("../Desafio4/contenedorProductos"); //DB
 const productsRouter = express.Router();
 
+//DB
 const contenedorProductos = new Contenedor("products.txt");
 
+//rutas
+//muestra todos los productos
 productsRouter.get("/", async(req, res)=>{
     try {
         const products = await contenedorProductos.getAll();
@@ -14,6 +17,7 @@ productsRouter.get("/", async(req, res)=>{
     }
 })
 
+//muestra el producto segun su id
 productsRouter.get("/:id", async(req, res)=>{
     const {id} = req.params;
     const product = await contenedorProductos.getById(parseInt(id));
@@ -29,38 +33,49 @@ productsRouter.get("/:id", async(req, res)=>{
     }
 })
 
+//guarda un elemento
 productsRouter.post("/", async(req,res)=>{
-    console.log("body", req.body);
+    //console.log("body", req.body);
     const newProduct = req.body;
-    const productosActualizados = await contenedorProductos.save(newProduct);
+    await contenedorProductos.save(newProduct);
     res.json({
-        message: `El producto fue creado`,
-        response: productosActualizados
+        message: `El producto fue guardado`,
+        response: products
     })
  })
 
+ //actualiza un elemento
 productsRouter.put("/:id", async(req,res)=>{
     const {id} = req.params;
-    const newInfo = req.body;
-    const productosAct = await contenedorProductos.updateById(parseInt(id),newInfo);
+    const actualizacion = req.body;
+    const productosAct = await contenedorProductos.putById(parseInt(id),actualizacion);
     res.json({
         message:`El producto con el id ${id} fue actualizado`,
         response: productosAct
     })
 })
 
+//elimina el elemento
 productsRouter.delete("/:id", async(req,res)=>{
     const {id} = req.params;
-    const prod = await contenedorProductos.getById(parseInt(id));
-    console.log(prod);
-    if(prod.length>=0){
-        const data = await contenedorProductos.deleteById(parseInt(id))
-        return res.status(202).send(data)
-    } else {
-        return res.status(404).send("El producto no existe")
-    }
+    const data = await contenedorProductos.deleteById(parseInt(id))
+    //const prod = await contenedorProductos.getById(parseInt(id));
+    //console.log(prod);
+    //if(prod.length>=0){
+    //    const data = await contenedorProductos.deleteById(parseInt(id))
+    //    return res.status(202).send(data)
+    //} else {
+    //    return res.status(404).send("El producto no existe")
+   // }
+   res.json({
+    message:`El producto fue eliminado`,
+    response: data
+    })
 })
 
+
+
+//peticion home
 productsRouter.get("/home",(req,res)=>{
     res.send("peticion home")
 })
